@@ -1,65 +1,72 @@
 import React, { useState } from "react";
 import "../Components/Style.css";
-import {Link,useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
-//   For implementing that sliding thing in login and signup
-  
-    const [loginLeft, setLoginLeft] = useState("50px");
+  //   For implementing that sliding thing in login and signup
+
+  const [loginLeft, setLoginLeft] = useState("50px");
   const [registerLeft, setRegisterLeft] = useState("-400px");
   const [btnLeft, setBtnLeft] = useState("0");
   const [isButton1Clicked, setButton1Clicked] = useState(false);
   const [isButton2Clicked, setButton2Clicked] = useState(false);
 
-//   For registering user 
+  //   For registering user
 
-const [registerdetails, setregisterdetails] = useState({});
-const [logindetails, setlogindetails] = useState({})
-const [loading, setloading] = useState(false);
-const navigate=useNavigate();
+  const [registerdetails, setregisterdetails] = useState({});
+  const [logindetails, setlogindetails] = useState({});
+  const [loading, setloading] = useState(false);
+  const navigate = useNavigate();
 
-
-
-
-// For getting input from the user 
-const handlechange=(e)=>{
-    const {name,value} =e.target;
+  // For getting input from the user
+  const handlechange = (e) => {
+    const { name, value } = e.target;
     setregisterdetails({
-        ...registerdetails,
-        [name]:value
-    })
+      ...registerdetails,
+      [name]: value,
+    });
     setlogindetails({
-        ...logindetails,
-        [name]:value
+      ...logindetails,
+      [name]: value,
+    });
+  };
+  // For Register the button
+  const registerbutton =async (e) => {
+    e.preventDefault();
+    try{
+    setloading(true) 
+  let res=await fetch("https://task-manager-9nrd.onrender.com/signup",{
+        method: "POST",
+        body: JSON.stringify(registerdetails),
+        headers:{"Content-Type": "application/json"}
     })
-    
-}
-// For Register the button 
-const registerbutton=(e)=>{
-    e.preventDefault()
-console.log(registerdetails)
-}
+    let data=await res.json()
 
+    // console.log(data)
+    setloading(false)
+    alert("You have registered successfully")
+  
 
+ } catch (error) {
+    console.log('error', error)
+ }
+  };
 
-// For Login the user 
-const loginbutton=(e)=>{
-e.preventDefault()
-console.log(logindetails)
-}
+  // For Login the user
+  const loginbutton = (e) => {
+    e.preventDefault();
+    console.log(logindetails);
+  };
 
-
-
-
-// For handling sliding between login and register 
-const handlelogin = () => {
+  // For handling sliding between login and register
+  const handlelogin = () => {
     setLoginLeft("50px");
     setRegisterLeft("450px");
     setBtnLeft("0");
     setButton1Clicked(true);
     setButton2Clicked(false);
-};
-// For handling sliding between login and register 
+  };
+  // For handling sliding between login and register
   const handleregister = () => {
     setLoginLeft("-400px");
     setRegisterLeft("50px");
@@ -67,6 +74,9 @@ const handlelogin = () => {
     setButton1Clicked(false);
     setButton2Clicked(true);
   };
+  if(loading)
+  return (<><img src="https://i.stack.imgur.com/kOnzy.gif" alt="Loadingimage" /></>)
+
 
   return (
     <>
@@ -74,6 +84,7 @@ const handlelogin = () => {
         <div className="form-box">
           <div className="button-box">
             <div className="btn"></div>
+          {/* Button for sliding between login and signup */}
             <button
               type="button"
               className="toggle-btn"
@@ -87,6 +98,7 @@ const handlelogin = () => {
             >
               Log In
             </button>
+          {/* Button for sliding between login and signup */}
             <button
               type="button"
               className="toggle-btn"
@@ -104,8 +116,11 @@ const handlelogin = () => {
           </div>
           {/* Form for the login  */}
 
-          <form id="login" className="input-group" style={{ left: loginLeft }}
-          onSubmit={loginbutton}
+          <form
+            id="login"
+            className="input-group"
+            style={{ left: loginLeft }}
+            onSubmit={loginbutton}
           >
             <span className="sapan">Email</span>
             <input
@@ -114,8 +129,6 @@ const handlelogin = () => {
               placeholder="Enter Your Email"
               name="email"
               onChange={handlechange}
-           
-              
             />
             <span className="sapan">Password</span>
             <input
@@ -124,7 +137,6 @@ const handlelogin = () => {
               placeholder="Enter Password"
               name="password"
               onChange={handlechange}
-           
             />
             <button type="submit" className="submit-btn" id="logind">
               Login
