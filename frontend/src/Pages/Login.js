@@ -14,6 +14,7 @@ function Login() {
 //   For registering user 
 
 const [registerdetails, setregisterdetails] = useState({});
+const [logindetails, setlogindetails] = useState({})
 const [loading, setloading] = useState(false);
 const navigate=useNavigate();
 
@@ -21,19 +22,30 @@ const navigate=useNavigate();
 
 
 // For getting input from the user 
-const handlechange=()=>{
+const handlechange=(e)=>{
+    const {name,value} =e.target;
+    setregisterdetails({
+        ...registerdetails,
+        [name]:value
+    })
+    setlogindetails({
+        ...logindetails,
+        [name]:value
+    })
     
 }
 // For Register the button 
-const registerbutton=()=>{
-
+const registerbutton=(e)=>{
+    e.preventDefault()
+console.log(registerdetails)
 }
 
 
 
 // For Login the user 
-const loginbutton=()=>{
-
+const loginbutton=(e)=>{
+e.preventDefault()
+console.log(logindetails)
 }
 
 
@@ -92,12 +104,16 @@ const handlelogin = () => {
           </div>
           {/* Form for the login  */}
 
-          <form id="login" className="input-group" style={{ left: loginLeft }}>
+          <form id="login" className="input-group" style={{ left: loginLeft }}
+          onSubmit={loginbutton}
+          >
             <span className="sapan">Email</span>
             <input
               type="text"
               className="input-field"
               placeholder="Enter Your Email"
+              name="email"
+              onChange={handlechange}
            
               
             />
@@ -106,6 +122,8 @@ const handlelogin = () => {
               type="text"
               className="input-field"
               placeholder="Enter Password"
+              name="password"
+              onChange={handlechange}
            
             />
             <button type="submit" className="submit-btn" id="logind">
@@ -119,6 +137,7 @@ const handlelogin = () => {
             id="register"
             className="input-group"
             style={{ left: registerLeft }}
+            onSubmit={registerbutton}
           >
             <span className="sapan">User name</span>
 
