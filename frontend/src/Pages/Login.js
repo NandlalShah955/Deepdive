@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Components/Style.css";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Login() {
   //   For implementing that sliding thing in login and signup
@@ -16,7 +17,8 @@ function Login() {
   const [registerdetails, setregisterdetails] = useState({});
   const [logindetails, setlogindetails] = useState({});
   const [loading, setloading] = useState(false);
-  const navigate = useNavigate();
+
+
 
   // For getting input from the user
   const handlechange = (e) => {
@@ -25,37 +27,32 @@ function Login() {
       ...registerdetails,
       [name]: value,
     });
+};
+const handleloginchange=(e)=>{
+    const { name, value } = e.target;
     setlogindetails({
       ...logindetails,
       [name]: value,
     });
-  };
+  }
   // For Register the button
-  const registerbutton =async (e) => {
+  const registerbutton = (e) => {
     e.preventDefault();
-    try{
-    setloading(true) 
-  let res=await fetch("https://task-manager-9nrd.onrender.com/signup",{
-        method: "POST",
-        body: JSON.stringify(registerdetails),
-        headers:{"Content-Type": "application/json"}
+    console.log(registerdetails)
+    setloading(true)
+    axios.post("http://localhost:9002/signup/",registerdetails).then((res)=>{
+    setloading(false)    
+    alert(res.data.message);
+        
     })
-    let data=await res.json()
-
-    // console.log(data)
-    setloading(false)
-    alert("You have registered successfully")
-  
-
- } catch (error) {
-    console.log('error', error)
- }
+   
   };
 
   // For Login the user
   const loginbutton = (e) => {
-    e.preventDefault();
-    console.log(logindetails);
+    e.preventDefault(); 
+    console.log(logindetails)
+   
   };
 
   // For handling sliding between login and register
@@ -128,7 +125,7 @@ function Login() {
               className="input-field"
               placeholder="Enter Your Email"
               name="email"
-              onChange={handlechange}
+              onChange={handleloginchange}
             />
             <span className="sapan">Password</span>
             <input
@@ -136,7 +133,7 @@ function Login() {
               className="input-field"
               placeholder="Enter Password"
               name="password"
-              onChange={handlechange}
+              onChange={handleloginchange}
             />
             <button type="submit" className="submit-btn" id="logind">
               Login
@@ -158,7 +155,7 @@ function Login() {
               className="input-field"
               placeholder="Enter Your Name"
               onChange={handlechange}
-              name="username"
+              name="name"
             />
             <span className="sapan">Email</span>
 
