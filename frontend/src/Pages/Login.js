@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../Components/Style.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Login() {
@@ -18,8 +18,10 @@ function Login() {
   const [logindetails, setlogindetails] = useState({});
   const [loading, setloading] = useState(false);
 
+  // FOr validating User form
+  const [mistakes, setMistakes] = useState({});
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   // For getting input from the user
   const handlechange = (e) => {
@@ -28,50 +30,79 @@ function Login() {
       ...registerdetails,
       [name]: value,
     });
-};
-const handleloginchange=(e)=>{
+  };
+  const handleloginchange = (e) => {
     const { name, value } = e.target;
     setlogindetails({
       ...logindetails,
       [name]: value,
     });
-  }
+  };
   // For Register the button
   const registerbutton = (e) => {
     e.preventDefault();
-    setloading(true)
-    axios.post("https://deepdive-backend.onrender.com/user/signup",registerdetails).then((res)=>{
-    setloading(false)    
-    alert(res.data);
-        
-    })
-   
+    var validateError = {};
+    const naamvalidation = /^[a-zA-Z]*$/;
+    const emailvalidation = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+    if (!registerdetails.name) {
+      validateError.name = " name is required";
+    } else if (!naamvalidation.test(registerdetails.name)) {
+      validateError.name = " name is invalid";
+    }
+    if (!registerdetails.email) {
+      validateError.email = "Email is required";
+    } else if (!emailvalidation.test(registerdetails.email)) {
+      validateError.email = "Email is invalid";
+    }
+    if (!registerdetails.password) {
+      validateError.password = "Password is required";
+    }
+    if (Object.keys(validateError).length) {
+      setMistakes(validateError);
+      return;
+    }
+
+    setMistakes({});
+
+    setloading(true);
+    axios
+      .post(
+        "https://deepdive-backend.onrender.com/user/signup",
+        registerdetails
+      )
+      .then((res) => {
+        setloading(false);
+        if(res.data="COngrats you have registered successfully"){
+          alert("You have registered successfully please login now")
+        }else{
+          alert(res.data.message);
+
+        }
+        console.log(res)
+      });
   };
 
   // For Login the user
   const loginbutton = (e) => {
-    e.preventDefault(); 
-    setloading(true)
-    axios.post("https://deepdive-backend.onrender.com/user/login",logindetails).then((res)=>{
-    setloading(false)  
-    
-    console.log(res);
-    if(res.data.message=="Login successfully"){
-      alert(res.data.message);
-      navigate("/dashboard")
+    e.preventDefault();
+    setloading(true);
+    axios
+      .post("https://deepdive-backend.onrender.com/user/login", logindetails)
+      .then((res) => {
+        setloading(false);
 
-    }else if(res.data.message=="Please login to proceed"){
-     alert("Please register first");
-    }else if(res.data.message=="Password and confirm password didn't match"){
-      alert("oops Wrong credentials")
-    }
-    
-    
-    
-
-    
-  })
-   
+        if (res.data.message == "Login successfully") {
+          alert(res.data.message);
+          navigate("/dashboard");
+        } else if (res.data.message == "Please login to proceed") {
+          alert("Please register first");
+        } else if (
+          res.data.message == "Password and confirm password didn't match"
+        ) {
+          alert("oops Wrong credentials");
+        }
+      });
   };
 
   // For handling sliding between login and register
@@ -90,9 +121,14 @@ const handleloginchange=(e)=>{
     setButton1Clicked(false);
     setButton2Clicked(true);
   };
-  if(loading)
-  return (<><img src="https://i.stack.imgur.com/kOnzy.gif" alt="Loadingimage" /></>)
 
+  // For showing loading indicator
+  if (loading)
+    return (
+      <>
+        <img src="https://i.stack.imgur.com/kOnzy.gif" alt="Loadingimage" />
+      </>
+    );
 
   return (
     <>
@@ -100,7 +136,7 @@ const handleloginchange=(e)=>{
         <div className="form-box">
           <div className="button-box">
             <div className="btn"></div>
-          {/* Button for sliding between login and signup */}
+            {/* Button for sliding between login and signup */}
             <button
               type="button"
               className="toggle-btn"
@@ -114,7 +150,7 @@ const handleloginchange=(e)=>{
             >
               Log In
             </button>
-          {/* Button for sliding between login and signup */}
+            {/* Button for sliding between login and signup */}
             <button
               type="button"
               className="toggle-btn"
@@ -146,6 +182,7 @@ const handleloginchange=(e)=>{
               name="email"
               onChange={handleloginchange}
             />
+
             <span className="sapan">Password</span>
             <input
               type="password"
@@ -153,8 +190,8 @@ const handleloginchange=(e)=>{
               placeholder="Enter Password"
               name="password"
               onChange={handleloginchange}
-              
             />
+
             <button type="submit" className="submit-btn" id="logind">
               Login
             </button>
@@ -177,6 +214,9 @@ const handleloginchange=(e)=>{
               onChange={handlechange}
               name="name"
             />
+            {mistakes.name && (
+              <span className="mistakemessage">{mistakes.name}</span>
+            )}
             <span className="sapan">Email</span>
 
             <input
@@ -186,6 +226,9 @@ const handleloginchange=(e)=>{
               onChange={handlechange}
               name="email"
             />
+            {mistakes.email && (
+              <span className="mistakemessage">{mistakes.email}</span>
+            )}
             <span className="sapan">Password</span>
 
             <input
@@ -195,6 +238,9 @@ const handleloginchange=(e)=>{
               onChange={handlechange}
               name="password"
             />
+            {mistakes.password && (
+              <span className="mistakemessage">{mistakes.password}</span>
+            )}
             <input type="checkbox" className="checg-box" />
             <span>I agree to the terms & conditons</span>
             <button type="submit" className="submit-btn">
