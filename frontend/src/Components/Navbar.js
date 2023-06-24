@@ -22,7 +22,7 @@ function Navbar() {
         </ul>
       </nav>
 
-      <button><Link to="/">Free sign up</Link></button>
+      <button><Link to="#">Free sign up</Link></button>
     </header>
 
     </>

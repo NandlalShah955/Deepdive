@@ -41,9 +41,7 @@ function Dashboard() {
 				      <div class="banner-text">
 					      <h1>First I wanted to be
 a veterinarian</h1>
-						  <p>Lorem Ipsum available but the majority have
-suffered alteration in some form, by injected
-humour randomised words.</p>
+						  <p>At Pet Veteran, we understand that pets are family. With our compassionate and skilled professionals, your beloved companion will receive top-notch medical care and attention.</p>
 						  
 					   </div>
 				 </div>

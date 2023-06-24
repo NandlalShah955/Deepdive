@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import "../Components/Style.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../Context/AuthContext";
 
 function Login() {
+  // For private routing 
+  const {isAuth,toggleAuth}=useContext(AuthContext);
+  
   //   For implementing that sliding thing in login and signup
 
   const [loginLeft, setLoginLeft] = useState("50px");
@@ -66,6 +70,10 @@ function Login() {
     setMistakes({});
 
     setloading(true);
+    setTimeout(() => {
+      
+      alert("Api is Deployed on free server so maybe it can work slow")
+    }, 3000);
     axios
       .post(
         "https://deepdive-backend.onrender.com/user/signup",
@@ -87,14 +95,19 @@ function Login() {
   const loginbutton = (e) => {
     e.preventDefault();
     setloading(true);
+    setTimeout(() => {
+      
+      alert("Api is Deployed on free server so maybe it can work slow")
+    }, 3000);
     axios
       .post("https://deepdive-backend.onrender.com/user/login", logindetails)
       .then((res) => {
         setloading(false);
 
-        if (res.data.message == "Login successfully") {
+        if (res.data.message == "Login successfully" &&isAuth) {
           alert(res.data.message);
           navigate("/dashboard");
+          
         } else if (res.data.message == "Please login to proceed") {
           alert("Please register first");
         } else if (
@@ -192,7 +205,7 @@ function Login() {
               onChange={handleloginchange}
             />
 
-            <button type="submit" className="submit-btn" id="logind">
+            <button type="submit" className="submit-btn" id="logind" onClick={toggleAuth}>
               Login
             </button>
           </form>

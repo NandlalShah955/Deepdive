@@ -5,10 +5,17 @@ import style from "../Components/Form.module.css";
 import axios from "axios";
 
 function Form() {
+  // For registering pet details
   const [petDetails, setpetDetails] = useState({});
+  
+  // FOr loading indicator
   const [loading, setloading] = useState(false);
+
+  // FOr validating form
   const [mistakes, setMistakes] = useState({});
 
+
+  // For getting input result  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setpetDetails({
@@ -17,9 +24,13 @@ function Form() {
     });
   };
 
+
+  // After submitting form function
   const handlesubmit = (e) => {
     e.preventDefault();
     // console.log(petDetails);
+    
+    // For validating the form details 
     var validateError = {};
     if (!petDetails.petname) {
       validateError.petname = "Pet name is required.";
@@ -42,6 +53,8 @@ function Form() {
       return;
     }
     setMistakes({});
+
+  // For posting the input details to the API
 
     setloading(true);
     axios
@@ -69,9 +82,11 @@ function Form() {
           <form action="" onSubmit={handlesubmit}>
             <h1>Welcome !</h1>
 
-            <h1>Sign up to</h1>
-            <p>Lorem Ipsum is simply</p>
+            <h1>Add Pet</h1>
+            <p>Your pet is Our Responsibility</p>
 
+        {/* Form for the entering pet details  */}
+        
             <div className={style.inputBox}>
               <span>Petname</span>
               <input
