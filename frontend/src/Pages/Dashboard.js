@@ -63,7 +63,10 @@ humour randomised words.</p>
   
 
 
-    {/* <div className='main'>
+<div className='mainfinal'>
+<h2 className='center'>Our Treated Pets</h2>
+
+    <div className='main'>
       {data.map((el) => (
         <div key={el.id}>
   <img src="https://th.bing.com/th/id/OIP.WDpVibS9KhiPPMgQN2I1KAHaHa?w=204&h=204&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" />
@@ -73,7 +76,8 @@ humour randomised words.</p>
         <p >Name of the owner:{el.name}</p>
         </div>
       ))}
-    </div> */}
+    </div>
+</div>
 
 
    
