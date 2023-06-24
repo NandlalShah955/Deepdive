@@ -6,6 +6,7 @@ const port = 8080;
 require("dotenv").config();
 const {connect}=require("./src/config/db")
 const {Userrouter}=require("./src/routes/user.route")
+const {Petrouter}=require("./src/routes/pet.route")
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.use("/user",Userrouter);
+app.use("/pet",Petrouter);
 
 // Start the server
 app.listen(port, () => {

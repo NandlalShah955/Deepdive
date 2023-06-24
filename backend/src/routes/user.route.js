@@ -1,10 +1,10 @@
 const express=require("express");
 const {UserModel}=require("../model/user.model");
 const Userrouter=express.Router();
-Userrouter.get("/user",(req,res)=>{
+Userrouter.get("/",async(req,res)=>{
     
-    // let user=User.find()
-    res.send("user")
+    let user=await UserModel.find()
+    res.send(user)
 })
 
 Userrouter.post("/signup", async(req, res) => {
