@@ -2,7 +2,13 @@ const express=require('express');
 const {PetModel}=require("../model/pet.model");
 const Petrouter=express.Router();
 
-Petrouter.post("/",async(req,res)=>{
+Petrouter.get("/",async (req,res)=>{
+   let pet=await PetModel.find();
+   res.send(pet);
+})
+
+
+Petrouter.post("/register",async(req,res)=>{
     const {petname,breed,age,name,email}=req.body;
      const pet=await PetModel.findOne({email:req.body.email})
      if(pet){
