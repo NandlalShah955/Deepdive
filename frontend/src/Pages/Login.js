@@ -19,6 +19,7 @@ function Login() {
   const [loading, setloading] = useState(false);
 
 
+  const navigate=useNavigate();
 
   // For getting input from the user
   const handlechange = (e) => {
@@ -40,9 +41,9 @@ const handleloginchange=(e)=>{
     e.preventDefault();
     console.log(registerdetails)
     setloading(true)
-    axios.post("http://localhost:9002/signup/",registerdetails).then((res)=>{
+    axios.post("https://deepdive-backend.onrender.com/user/signup",registerdetails).then((res)=>{
     setloading(false)    
-    alert(res.data.message);
+    alert(res.data);
         
     })
    
@@ -52,6 +53,26 @@ const handleloginchange=(e)=>{
   const loginbutton = (e) => {
     e.preventDefault(); 
     console.log(logindetails)
+    setloading(true)
+    axios.post("https://deepdive-backend.onrender.com/user/login",logindetails).then((res)=>{
+    setloading(false)  
+    
+    console.log(res);
+    if(res.data.message=="Login successfully"){
+      alert(res.data.message);
+      navigate("/dashboard")
+
+    }else if(res.data.message=="Please login to proceed"){
+     alert("Please register first");
+    }else if(res.data.message=="Password and confirm password didn't match"){
+      alert("oops Wrong credentials")
+    }
+    
+    
+    
+
+    
+  })
    
   };
 
@@ -129,11 +150,12 @@ const handleloginchange=(e)=>{
             />
             <span className="sapan">Password</span>
             <input
-              type="text"
+              type="password"
               className="input-field"
               placeholder="Enter Password"
               name="password"
               onChange={handleloginchange}
+              
             />
             <button type="submit" className="submit-btn" id="logind">
               Login
@@ -169,7 +191,7 @@ const handleloginchange=(e)=>{
             <span className="sapan">Password</span>
 
             <input
-              type="text"
+              type="password"
               className="input-field"
               placeholder="Enter Your Password"
               onChange={handlechange}
