@@ -8,7 +8,7 @@ function Navbar() {
        <header>
       <div className="logo">
         <img
-          src="https://themexriver.com/appilo-theme/saas-classic/wp-content/themes/appilo/img/saas-classic/logo/logo.png"
+          src="https://th.bing.com/th?id=OIP.zie8T1Jk4m2aGFocXJa8swHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
           alt="Logo_image"
         />
       </div>
@@ -22,7 +22,7 @@ function Navbar() {
         </ul>
       </nav>
 
-      <button><a href="#">Free sign up</a></button>
+      <button><Link to="/">Free sign up</Link></button>
     </header>
 
     </>

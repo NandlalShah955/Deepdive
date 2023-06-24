@@ -39,7 +39,6 @@ const handleloginchange=(e)=>{
   // For Register the button
   const registerbutton = (e) => {
     e.preventDefault();
-    console.log(registerdetails)
     setloading(true)
     axios.post("https://deepdive-backend.onrender.com/user/signup",registerdetails).then((res)=>{
     setloading(false)    
@@ -52,7 +51,6 @@ const handleloginchange=(e)=>{
   // For Login the user
   const loginbutton = (e) => {
     e.preventDefault(); 
-    console.log(logindetails)
     setloading(true)
     axios.post("https://deepdive-backend.onrender.com/user/login",logindetails).then((res)=>{
     setloading(false)  

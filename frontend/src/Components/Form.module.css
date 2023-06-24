@@ -1,0 +1,81 @@
+.container {
+    min-height: 800px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container form {
+    border-radius: 4px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  .formwalaahai h1,
+  .amoun {
+    font-size: 25px;
+    margin-left: 15px;
+    font-weight: 25;
+  }
+  
+  .inputBox {
+    margin-top: 20px;
+    flex: 1 1 150px;
+  }
+  .inputBox span {
+    display: flex;
+    padding-bottom: 5px;
+    
+  }
+  .inputBox input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    color: #444;
+  }
+  .submit{
+    width: 100%;
+
+    cursor: pointer;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    
+    border: none;
+    margin-top: 15px;
+
+  }
+  .task{
+    /* border: 1px solid red; */
+    height: 500px;
+    width: 25%;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  }
+  .showtask{
+    height: 200px;
+    width: 90%;
+    border: 1px solid red;
+  }
+  .entertask{
+    margin-top: 140px;
+  }
+  .entertask input{
+    width: 90%;
+    height: 50px;
+
+  }
+  .entertask button{
+    width: 90%;
+
+    cursor: pointer;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    
+    border: none;
+    margin-top: 15px; 
+  }
