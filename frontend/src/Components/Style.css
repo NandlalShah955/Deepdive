@@ -196,6 +196,9 @@ transition: 0.5s;
 }
 .content p{
   font-family: arial;
+  font-weight: bold;
+  font-size: #000;
+  line-height: 30px;
 }
 
 
