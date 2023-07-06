@@ -38,8 +38,9 @@ function Dashboard() {
   {/* Section for the main dashboard  */}
 
 <div className='content'>
-  <h1>Grooming & Pet Care</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente similique harum debitis adipisci beatae eius. Quo placeat, impedit vitae temporibus voluptatibus eius animi cum nostrum? Animi molestiae nam veritatis repudiandae.</p>
+  <h1>Grooming & Pet<br/> Care</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente similique harum debitis adipisci beatae eius.</p>
+<button>Learn more</button>
 </div>
 
 

@@ -124,7 +124,7 @@ a {
 .container-fluid{
   width: 100%;
   height: 80px;
-  background-color: red;
+  background:linear-gradient(to left,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url("");
 } 
 .container{
  width: 1200px;
@@ -181,25 +181,51 @@ transition: 0.5s;
   color: #fff;
 }
 .content{
-  width: 100%;
+  width: 1200px;
   height: 100vh;
   background-color: yellowgreen;
   margin: auto;
+  
 }
 .content h1{
-  font-family: arial;
   font-weight: bold;
   color: #fff;
   font-size: 50px;
   padding-top: 100px;
-
+  text-align: start;
+  
 }
 .content p{
   font-family: arial;
+  text-align: start;
   font-weight: bold;
   font-size: #000;
   line-height: 30px;
+  padding-top: 30px;
+  width: 600px;
 }
+.content button{
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: none;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: #30d300;
+
+  transition: 0.5s;
+  margin-top: 30px;
+
+}
+.content button:hover{
+  background-color: #fff;
+  color: #30d300;
+}
+
 
 
   .hover {
