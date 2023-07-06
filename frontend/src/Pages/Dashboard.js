@@ -34,28 +34,12 @@ function Dashboard() {
   return (
     <>
     <Navbar/>
-    <section class="banner-section">
-	     <div class="containerhia">
-		     <div class="row align-items-center">
-			      <div class="col-md-6">
-				      <div class="banner-text">
-					      <h1>First I wanted to be
-a veterinarian</h1>
-						  <p>At Pet Veteran, we understand that pets are family. With our compassionate and skilled professionals, your beloved companion will receive top-notch medical care and attention.</p>
-						  
-					   </div>
-				 </div>
-				 
-				 <div class="col-md-6">
-				      <div class="banner-img">
-					     <img src="https://user-images.githubusercontent.com/101573792/248465043-b627f5e3-3c72-4d41-a44f-a562ac58110c.png" alt=""/>
-					 </div>
-				 </div>
-				 
-			 </div>
-		</div>
-	</section>
+  
+  {/* Section for the main dashboard  */}
 
+<div className='content'>
+  <h1>Grooming & Pet Care</h1>
+</div>
 
 
   
