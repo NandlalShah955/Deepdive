@@ -1,13 +1,13 @@
-import React, { useState,useContext } from "react";
+import React, { useState, useContext } from "react";
 import "../Components/Style.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../Context/AuthContext";
 
 function Login() {
-  // For private routing 
-  const {isAuth,toggleAuth}=useContext(AuthContext);
-  
+  // For private routing
+  const { isAuth, toggleAuth } = useContext(AuthContext);
+
   //   For implementing that sliding thing in login and signup
 
   const [loginLeft, setLoginLeft] = useState("50px");
@@ -71,8 +71,7 @@ function Login() {
 
     setloading(true);
     setTimeout(() => {
-      
-      alert("Api is Deployed on free server so maybe it can work slow")
+      alert("Api is Deployed on free server so maybe it can work slow");
     }, 3000);
     axios
       .post(
@@ -81,13 +80,12 @@ function Login() {
       )
       .then((res) => {
         setloading(false);
-        if(res.data="COngrats you have registered successfully"){
-          alert("You have registered successfully please login now")
-        }else{
+        if ((res.data = "COngrats you have registered successfully")) {
+          alert("You have registered successfully please login now");
+        } else {
           alert(res.data.message);
-
         }
-        console.log(res)
+        console.log(res);
       });
   };
 
@@ -96,18 +94,16 @@ function Login() {
     e.preventDefault();
     setloading(true);
     setTimeout(() => {
-      
-      alert("Api is Deployed on free server so maybe it can work slow")
+      alert("Api is Deployed on free server so maybe it can work slow");
     }, 3000);
     axios
       .post("https://deepdive-backend.onrender.com/user/login", logindetails)
       .then((res) => {
         setloading(false);
 
-        if (res.data.message == "Login successfully" &&isAuth) {
+        if (res.data.message == "Login successfully" && isAuth) {
           alert(res.data.message);
-          navigate("/dashboard");
-          
+          navigate("/form");
         } else if (res.data.message == "Please login to proceed") {
           alert("Please register first");
         } else if (
@@ -121,7 +117,7 @@ function Login() {
   // For handling sliding between login and register
   const handlelogin = () => {
     setLoginLeft("50px");
-    setRegisterLeft("450px");
+    setRegisterLeft("500px");
     setBtnLeft("0");
     setButton1Clicked(true);
     setButton2Clicked(false);
@@ -146,9 +142,14 @@ function Login() {
   return (
     <>
       <div className="hero">
+        <div className="imagewla">
+          <img
+            src="https://th.bing.com/th/id/OIP.tdTa5p82AvTMC-89cL-8xwHaEK?w=322&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+            alt=""
+          />
+        </div>
         <div className="form-box">
           <div className="button-box">
-            <div className="btn"></div>
             {/* Button for sliding between login and signup */}
             <button
               type="button"
@@ -205,7 +206,12 @@ function Login() {
               onChange={handleloginchange}
             />
 
-            <button type="submit" className="submit-btn" id="logind" onClick={toggleAuth}>
+            <button
+              type="submit"
+              className="submit-btn"
+              id="logind"
+              onClick={toggleAuth}
+            >
               Login
             </button>
           </form>

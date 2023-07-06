@@ -17,12 +17,12 @@ function Navbar() {
         <ul>
           <li><Link to='/form' className="hover" >Add Pet</Link></li>
           <li><Link to='/service' className="hover" >Service</Link></li>
-          <li><Link to='/dashboard' className="hover" >Dashboard</Link></li>
+          <li><Link to='/' className="hover" >Dashboard</Link></li>
          
         </ul>
       </nav>
 
-      <button><Link to="#">Free sign up</Link></button>
+      <button><Link to="/login">Free sign up</Link></button>
     </header>
 
     </>

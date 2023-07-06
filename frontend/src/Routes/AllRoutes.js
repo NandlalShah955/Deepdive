@@ -9,12 +9,12 @@ import { Route, Routes } from "react-router-dom";
 function AllRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/dashboard" element={
-      <PrivateRoute>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/login" element={
+    
 
-      <Dashboard />
-      </PrivateRoute>
+      <Login />
+     
       
       } />
       <Route path="/form" element={
@@ -25,10 +25,10 @@ function AllRoutes() {
       
       } />
       <Route path="/service" element={
-        <PrivateRoute>
+      
 
       <Service />
-        </PrivateRoute>
+       
       
       } />
 

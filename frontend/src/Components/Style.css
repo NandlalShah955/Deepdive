@@ -7,20 +7,35 @@
 }
 .hero{
     height: 100%;
-    width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1b1DeX.img");
-  background-position: center;
-  background-size: cover;
-  position: absolute;
+    width: 80%;
+
+  margin: auto;
+  display: flex;
+
 
 }
+
+.imagewla{
+  width: 50%;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+
+}
+.imagewla img{
+  width: 80%;
+  height: 70%;
+}
 .form-box{
-    width: 380px;
+    width: 420px;
     height: 510px;
     position: relative;
     margin: 6% auto;
     background: #fff;
-  
+   
     padding: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     overflow: hidden;
@@ -52,8 +67,9 @@
 .input-group{
     top: 140px;
     position: absolute;
-    width: 280px;
+    width: 80%;
     transition: .5s;
+    
 
 }
 #logind{
@@ -198,3 +214,4 @@ header {
   font-size: 14px;
   margin-bottom: 10px;
   }
+
