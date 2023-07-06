@@ -30,16 +30,7 @@ function Navbar() {
         
       </div>
 
-      {/* <nav>
-        <ul>
-          <li><Link to='/form' className="hover" >Add Pet</Link></li>
-          <li><Link to='/service' className="hover" >Service</Link></li>
-          <li><Link to='/' className="hover" >Dashboard</Link></li>
-         
-        </ul>
-      </nav>
-
-     */}
+    
     </header>
 
     </>
