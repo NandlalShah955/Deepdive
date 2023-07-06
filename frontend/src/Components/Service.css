@@ -25,14 +25,21 @@ width: 40%;
 margin: 30px;
 cursor: pointer;
 background-color: white;
+border-radius: 30px;
 }
 .services-img {
     max-width: 340px;
     margin: 0px auto 30px;
+    border-radius: 30px;
+}
+.services-img img{
+    
+    border-radius: 30px;
 }
 .services-img+h3 {
     color: #30d300;
     font-size: calc(1.3rem + .6vw);
+    margin-top: -20px;
 }
 .services-img+h3+p{
     font-size: 20px;
