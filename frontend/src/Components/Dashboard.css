@@ -1,5 +1,5 @@
 
-
+/* 
 
 section.banner-section {
     background: #fcc302;
@@ -50,7 +50,7 @@ section.banner-section {
    
     margin-top: -40px;
     margin-left: 100px;
-}
+} */
 .center{
     text-align: center;
     margin-top: 0px;
@@ -62,6 +62,7 @@ color: white;
   
     border: 1px solid red;
     height: auto;
+    margin: auto;
     margin-top: 50px;
 
 }
