@@ -39,7 +39,7 @@ function Dashboard() {
   {/* Section for the main dashboard  */}
 
 <div className='content'>
-  <h1>Grooming & Pet<br/> Care</h1>
+  <h1>Grooming & Pet<br/> Veterinarian</h1>
   <p>Stay ahead of the pack with our copyrighted pet veterinary dashboard, designed to streamline your workflow and enhance patient care</p>
 <button>Learn more</button>
 </div>
