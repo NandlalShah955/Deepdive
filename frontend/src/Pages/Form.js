@@ -76,7 +76,7 @@ function Form() {
     );
   return (
     <>
-      <Navbar />
+    
       <div className={style.container}>
         <div className={style.formwalaahai}>
           <form action="" onSubmit={handlesubmit}>

@@ -17,10 +17,10 @@ function AllRoutes() {
       
       } />
       <Route path="/form" element={
-      <PrivateRoute>
+     
 
       <Form />
-      </PrivateRoute>
+      
       
       } />
     

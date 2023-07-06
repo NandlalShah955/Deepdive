@@ -1,91 +1,40 @@
-
-/* 
-
-section.banner-section {
-    background: #fcc302;
-    padding: 100px 0px;
-    height: 700px;
-    margin-top: 104px;
+.center {
+  text-align: center;
+  margin-top: 0px;
+  font-size: 40px;
+  color: green;
 }
-.banner-text{
-    margin-left: 200px;
-    margin-top: 150px;
+.mainfinal {
+  width: 90%;
+ 
+  height: auto;
+  margin: auto;
+  margin-top: 50px;
 }
-.banner-text h1 {
-    color: #FFF;
-    font-size: 56px;
-    line-height: 68px;
-    margin-bottom: 20px;
-    text-align: start;
-}
-
-.banner-text p {
-    color: #FFF;
-    font-size: 22px;
-    text-align: start;
-    margin-bottom: 33px;
-    text-transform: uppercase;
+.main {
+  width: 90%;
+  margin: auto;
+  padding: 15px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+  gap: 35px;
+  margin-top: 70px;
+  background-color: #b7dee6;
 }
 
-.banner-text {
-    max-width: 541px;
+.main div {
+  background-color: white;
+  margin: auto;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 5px 5px 10px 1px rgb(0, 0, 0, 12%);
+  gap: 17.5px;
 }
 
-.btn {
-    font-size: 16px;
-    padding: 10px 22px;
-}
-
-.btn-blue {
-    background: #00bec9;
-    color: #FFF;
-    border: 2px solid #00bec9;
-    margin-right: 20px;
-}
-
-.btn-outline-light {
-    border: 2px solid #FFF;
-}
-.banner-img{
-   
-    margin-top: -40px;
-    margin-left: 100px;
-} */
-.center{
-    text-align: center;
-    margin-top: 0px;
-    font-size: 40px;
-color: white;
-}
-.mainfinal{
-    width: 90%;
-  
-    border: 1px solid red;
-    height: auto;
-    margin: auto;
-    margin-top: 50px;
-
-}
-.main{
-    width: 90%;
-    margin: auto;
-    padding: 15px;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
-    gap: 35px; 
-    margin-top: 70px;
-     
-}
-
-.main div{
-    background-color: white;
-    margin: auto;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    box-shadow: 5px 5px 10px 1px rgb(0, 0, 0, 12%);
-    gap: 17.5px;
+.main div img {
+  border-radius: 30px;
 }

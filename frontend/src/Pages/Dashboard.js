@@ -48,7 +48,7 @@ function Dashboard() {
 
 <Service/>
 
-  
+  {/* Section for showing the dogs which are added  */}
 
 
 <div className='mainfinal'>
@@ -57,7 +57,7 @@ function Dashboard() {
     <div className='main'>
       {data.map((el) => (
         <div key={el.id}>
-  <img src="https://th.bing.com/th/id/OIP.WDpVibS9KhiPPMgQN2I1KAHaHa?w=204&h=204&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" />
+  <img src="https://th.bing.com/th/id/OIP.WDpVibS9KhiPPMgQN2I1KAHaHa?w=204&h=204&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Dog_img" />
         <h2 >Petname:{el.petname}</h2>
         <p >Breed:{el.breed}</p>
         <p >Age of the pet:{el.age}</p>
