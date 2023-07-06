@@ -3,7 +3,6 @@
 .services-section{
     height: auto;
     width: 90%;
-    border: 1px solid red;
     margin: auto;
     margin-top: -100px;
     
@@ -15,15 +14,17 @@
 .content_Servics{
 
     height: 100%;
-    border: 1px solid green;
     margin-top: 20px;
     display: flex;
+    background-color: #F2F6FF;
     
 }
 .content_Servics>div{
-border: 1px solid red;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 width: 40%;
 margin: 30px;
+cursor: pointer;
+background-color: white;
 }
 .services-img {
     max-width: 340px;
