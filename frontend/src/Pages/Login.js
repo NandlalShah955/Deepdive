@@ -144,7 +144,7 @@ function Login() {
       <div className="hero">
         <div className="imagewla">
           <img
-            src="https://th.bing.com/th/id/OIP.tdTa5p82AvTMC-89cL-8xwHaEK?w=322&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+            src="https://th.bing.com/th/id/OIP.OJ6J2J1Vd71358SPHHHsbQHaEx?w=283&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7"
             alt=""
           />
         </div>
