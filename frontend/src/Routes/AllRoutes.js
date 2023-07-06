@@ -1,6 +1,5 @@
 import React from "react";
 import Dashboard from "../Pages/Dashboard";
-import Service from "../Pages/Service";
 import Login from "../Pages/Login";
 import Form from "../Pages/Form";
 import NotFound from "../Pages/NotFound";
@@ -24,13 +23,7 @@ function AllRoutes() {
       </PrivateRoute>
       
       } />
-      <Route path="/service" element={
-      
-
-      <Service />
-       
-      
-      } />
+    
 
       <Route path="*" element={<NotFound/>}/>
     </Routes>

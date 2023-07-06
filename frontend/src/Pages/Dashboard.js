@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer"
 import axios from 'axios';
+import Service from '../Components/Service';
 import "../Components/Dashboard.css";
 // "https://deepdive-backend.onrender.com/pet"
 
@@ -39,10 +40,13 @@ function Dashboard() {
 
 <div className='content'>
   <h1>Grooming & Pet<br/> Care</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente similique harum debitis adipisci beatae eius.</p>
+  <p>Stay ahead of the pack with our copyrighted pet veterinary dashboard, designed to streamline your workflow and enhance patient care</p>
 <button>Learn more</button>
 </div>
 
+
+
+<Service/>
 
   
 

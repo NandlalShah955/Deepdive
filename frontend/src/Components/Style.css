@@ -125,7 +125,7 @@ a {
 .container-fluid{
   width: 100%;
   height: 100vh;
-  background:linear-gradient(to left,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url("https://images.pexels.com/photos/7210754/pexels-photo-7210754.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background:linear-gradient(to left,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url("https://images.pexels.com/photos/15347387/pexels-photo-15347387/free-photo-of-a-dog-in-close-up-shot.jpeg?auto=compress&cs=tinysrgb&w=600");
   background-size: cover;
   background-repeat: no-repeat;
 } 
@@ -167,23 +167,30 @@ a {
   color:#30d300;
 
 }
-.container button{
-width: 150px;
-height: 50px;
-border-radius: 10px;
-font-size: 18px;
-border: none;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: #fff;
-color: #30d300;
-transition: 0.5s;
+.navbutton{
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: none;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: #30d300;
+
+  transition: 0.5s;
+  
+
 }
 .container button:hover{
   background-color: #30d300;
   color: #fff;
 }
+/* COntent styling starts from here  */
+
+
 .content{
   width: 1200px;
   height: 100vh;
@@ -201,14 +208,18 @@ transition: 0.5s;
   
 }
 .content p{
-  font-family: arial;
+  /* font-family: arial; */
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: start;
   font-weight: bold;
   font-size: #000;
+  color: white;
   line-height: 30px;
   padding-top: 30px;
-  /* width: 600px; */
+  width: 500px;
+
 }
+
 .content button{
   width: 150px;
   height: 40px;
@@ -240,35 +251,19 @@ transition: 0.5s;
   text-decoration: none;
   font-weight: 500;
   font-size: 20px;
+ 
+
+  list-style: none;
+  
+  font-weight: bold;
+  cursor: pointer;
 }
 .hover:hover {
   color: #30d300;
  
   }
-  .hover::after {
-    content: "";
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    position: absolute;
-    left: 0;
-    background-color: #d10edd;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  
-  .hover:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
   
 
-
-  
-  
-  
-  
   
  
   .footer-bottom {

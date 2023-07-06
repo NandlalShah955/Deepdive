@@ -11,11 +11,11 @@ function Navbar() {
         <h2>Pet Care</h2>
         <ul>
           <li><Link to='/form' className="hover" >Add Pet</Link></li>
-          <li><Link to='/service' className="hover" >Service</Link></li>
+          <li><Link to='#' className="hover" >Service</Link></li>
           <li><Link to='/' className="hover" >Dashboard</Link></li>
          
         </ul>
-        <button><Link to="/login">Free sign up</Link></button> 
+        <button className='navbutton'><Link to="/login">Free sign up</Link></button> 
       </div>
         
       </div>
