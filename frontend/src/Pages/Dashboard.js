@@ -39,6 +39,7 @@ function Dashboard() {
 
 <div className='content'>
   <h1>Grooming & Pet Care</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente similique harum debitis adipisci beatae eius. Quo placeat, impedit vitae temporibus voluptatibus eius animi cum nostrum? Animi molestiae nam veritatis repudiandae.</p>
 </div>
 
 
