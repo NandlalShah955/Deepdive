@@ -119,17 +119,20 @@ border-radius: 30px;
 }
 a {
     text-decoration: none;
+    color: white;
   }
 /* Navbar styling  */
 .container-fluid{
   width: 100%;
-  height: 80px;
-  background:linear-gradient(to left,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url("");
+  height: 100vh;
+  background:linear-gradient(to left,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url("https://images.pexels.com/photos/7210754/pexels-photo-7210754.jpeg?auto=compress&cs=tinysrgb&w=600");
+  background-size: cover;
+  background-repeat: no-repeat;
 } 
 .container{
  width: 1200px;
  height: 80px;
- background-color:gray ;
+ background-color:rgba(0,0,0,0) ;
  margin: auto; 
  display: flex;
  justify-content: space-between;
@@ -146,10 +149,11 @@ a {
   display: flex;
   justify-content: center;
   align-items: center ;
+  
 }
 .container ul li{
   font-family: arial;
-  color: #fff;
+  color: white;
   list-style: none;
   margin-right: 50px;
   font-weight: bold;
@@ -183,8 +187,9 @@ transition: 0.5s;
 .content{
   width: 1200px;
   height: 100vh;
-  background-color: yellowgreen;
+
   margin: auto;
+  margin-top: -600px;
   
 }
 .content h1{
@@ -202,7 +207,7 @@ transition: 0.5s;
   font-size: #000;
   line-height: 30px;
   padding-top: 30px;
-  width: 600px;
+  /* width: 600px; */
 }
 .content button{
   width: 150px;
@@ -228,16 +233,17 @@ transition: 0.5s;
 
 
 
-  .hover {
-    display: inline-block;
-    position: relative;
-    color: black;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 17px;
-  }
-  .hover:hover {
-    color: #d10edd;
+.hover {
+  display: inline-block;
+  position: relative;
+  color:white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+}
+.hover:hover {
+  color: #30d300;
+ 
   }
   .hover::after {
     content: "";
